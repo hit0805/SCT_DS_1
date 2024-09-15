@@ -1,0 +1,16 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+df = pd.read_csv("/content/world_population.csv")
+fig, ax = plt.subplots(1, 2, figsize=(12, 5))
+ax[0].hist(df['2022 Population'], bins=20, color='blue', edgecolor='black')
+ax[0].set_xlabel('2022 Population')
+ax[0].set_ylabel('Frequency')
+ax[0].set_title('Histogram of 2022 Population')
+
+ax[1].hist(df['2020 Population'], bins=20, color='green', edgecolor='black')
+ax[1].set_xlabel('2020 Population')
+ax[1].set_ylabel('Frequency')
+ax[1].set_title('Histogram of 2020 Population')
+
+plt.tight_layout()
+plt.show()
